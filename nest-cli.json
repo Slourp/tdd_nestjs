@@ -1,8 +1,50 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
+  "sourceRoot": "apps/tdd_nestjs/src",
   "compilerOptions": {
-    "deleteOutDir": true
-  }
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/tdd_nestjs/tsconfig.app.json"
+  },
+  "projects": {
+    "crafty": {
+      "type": "library",
+      "root": "libs/crafty",
+      "entryFile": "index",
+      "sourceRoot": "libs/crafty/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/crafty/tsconfig.lib.json"
+      }
+    },
+    "tdd_nestjs": {
+      "type": "application",
+      "root": "apps/tdd_nestjs",
+      "entryFile": "main",
+      "sourceRoot": "apps/tdd_nestjs/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/tdd_nestjs/tsconfig.app.json"
+      }
+    },
+    "api": {
+      "type": "application",
+      "root": "apps/api",
+      "entryFile": "main",
+      "sourceRoot": "apps/api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api/tsconfig.app.json"
+      }
+    },
+    "cli": {
+      "type": "application",
+      "root": "apps/cli",
+      "entryFile": "main",
+      "sourceRoot": "apps/cli/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/cli/tsconfig.app.json"
+      }
+    }
+  },
+  "monorepo": true,
+  "root": "apps/tdd_nestjs"
 }

@@ -16,6 +16,14 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@crafty/crafty": [
+        "libs/crafty/src"
+      ],
+      "@crafty/crafty/*": [
+        "libs/crafty/src/*"
+      ]
+    }
   }
 }
